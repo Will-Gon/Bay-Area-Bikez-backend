@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     end
 
     def create
-        byebug
+        #byebug
         @user = User.new(user_params)
         @club = Club.find_by(name: params[:club_name])
         @user.club_id = @club.id
