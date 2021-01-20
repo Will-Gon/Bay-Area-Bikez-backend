@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Attendance.delete_all
-Club.delete_all
+#Club.delete_all
 Like.delete_all
 Place.delete_all
 User.delete_all

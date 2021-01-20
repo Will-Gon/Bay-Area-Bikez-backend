@@ -13,8 +13,11 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create(user_params)
-        if @user
+        byebug
+        @user = User.new(user_params)
+        @club = Club.find_by(name: params[:club_name])
+        @user.club_id = @club.id
+        if @user.save
             payload = {user_id: @user.id}
             token = encode_token(payload)
             render json: {user: @user, token: token}
