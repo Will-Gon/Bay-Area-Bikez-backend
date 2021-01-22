@@ -28,6 +28,6 @@ l1 = Like.create(user_id: u1.id, place_id: p1.id)
 l2 = Like.create(user_id: u2.id, place_id: p2.id)
 l3 = Like.create(user_id: u3.id, place_id: p3.id)
 
-
+puts "Done"
 
 

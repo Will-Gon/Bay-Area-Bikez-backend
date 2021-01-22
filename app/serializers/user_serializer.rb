@@ -1,4 +1,8 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :club_id
-  belongs_to :club
+  attributes :id, :username, :club
+  #belongs_to :club
+
+  def club
+    object.club
+  end
 end
