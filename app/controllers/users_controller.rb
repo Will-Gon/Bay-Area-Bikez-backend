@@ -20,8 +20,8 @@ class UsersController < ApplicationController
         if @user.save
             payload = {user_id: @user.id}
             token = encode_token(payload)
-            render json: {user: @user, token: token}
-            #render json: {user: UserSerializer.new(@user), token: token}
+            # render json: {user: @user, token: token}
+            render json: {user: UserSerializer.new(@user), token: token}
 
         else
             render json: {error: @user.errors.full_messages}, status: :not_acceptable
@@ -29,6 +29,7 @@ class UsersController < ApplicationController
     end
 
     def update 
+        #byebug
         @user = User.find_by_id(params[:id])
         @user.update(user_params)
         if @user
@@ -43,8 +44,8 @@ class UsersController < ApplicationController
     end
 
     def profile
-        render json: {user: current_user}, status: :accepted
-        #render json: {user: UserSerializer.new(current_user)}, status: :accepted
+        # render json: {user: current_user}, status: :accepted
+        render json: {user: UserSerializer.new(current_user)}, status: :accepted
     end
 
     def destroy 
