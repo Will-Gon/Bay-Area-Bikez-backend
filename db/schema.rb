@@ -34,11 +34,12 @@ ActiveRecord::Schema.define(version: 2021_01_14_185535) do
   end
 
   create_table "places", force: :cascade do |t|
-    t.string "lat"
-    t.string "lng"
+    t.decimal "lat"
+    t.decimal "lng"
     t.string "name"
     t.text "description"
     t.datetime "date"
+    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
