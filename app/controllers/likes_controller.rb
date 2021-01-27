@@ -7,12 +7,15 @@ class LikesController < ApplicationController
     end
 
     def create
-        if Place.find(params[:likes][:place_id]) && User.find(params[:likes][:user_id])
+        #byebug
+        if Place.find(params[:like][:place_id]) && User.find(params[:like][:user_id])
             new_like = Like.create(like_params)
+            #render json: LikeSerializer.new(new_like)
+            render json: {id: new_like.id, place: new_like.place}
         else
-            new_like = like_params
+            render json: {error: 'Could Not find Place'}
         end
-        render json: new_like
+        #render json: new_like
         #render json: LikeSerializer.new(new_like)
     end
 

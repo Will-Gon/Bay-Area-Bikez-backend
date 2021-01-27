@@ -35,8 +35,8 @@ class UsersController < ApplicationController
         if @user
             payload = {user_id: @user.id}
             token = encode_token(payload)
-            render json: {user: @user, token: token}
-            #render json: {user: UserSerializer.new(@user), token: token}
+            #render json: {user: @user, token: token}
+            render json: {user: UserSerializer.new(@user), token: token}
 
         else
             render json: {error: @user.errors.full_messages}, status: :not_acceptable 
