@@ -3,6 +3,7 @@ class CreateClubs < ActiveRecord::Migration[6.0]
     create_table :clubs do |t|
       t.string :name
       t.string :location
+      t.string :image_url
 
       t.timestamps
     end

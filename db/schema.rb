@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2021_01_14_185535) do
   create_table "clubs", force: :cascade do |t|
     t.string "name"
     t.string "location"
+    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
