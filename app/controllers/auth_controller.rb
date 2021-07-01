@@ -3,7 +3,6 @@ class AuthController < ApplicationController
     #Will come back to this when I get to frontend
     def login
         @user = User.find_by(username: params[:username])
-        # byebug
         if @user && @user.authenticate(params[:password])
             payload = {user_id: @user.id}
             token = encode_token(payload)

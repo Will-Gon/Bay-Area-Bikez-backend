@@ -13,7 +13,6 @@ class UsersController < ApplicationController
     end
 
     def create
-        #byebug
         @user = User.new(user_params)
         @club = Club.find_by(name: params[:club_name])
         @user.club_id = @club.id
@@ -29,7 +28,6 @@ class UsersController < ApplicationController
     end
 
     def update 
-        #byebug
         @user = User.find_by_id(params[:id])
         @user.update(user_params)
         if @user
